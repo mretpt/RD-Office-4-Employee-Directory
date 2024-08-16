@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP Foundation - Research Department, Office 4, Employee Directory</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #00FF00;
+            background-color: #1E1E1E;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #00FF00;
+            border-radius: 8px;
+            background-color: #333333;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #00FF00;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .warning {
+            color: #FF0000;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+        .employee-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .employee-list li {
+            border-bottom: 1px solid #00FF00;
+            padding: 15px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .employee-list li:hover {
+            background-color: #555555;
+        }
+        .hacked-info {
+            color: #FF0000;
+            font-style: italic;
+            margin-top: 20px;
+            text-align: center;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.8); 
+            padding-top: 60px; 
+        }
+        .modal-content {
+            background-color: #1E1E1E;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #00FF00;
+            border-radius: 8px;
+            width: 80%; 
+            max-width: 600px;
+            color: #00FF00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+        }
+        .close {
+            color: #FF0000;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close:hover {
+            color: #FFAAAA;
+        }
+        /* Scrolling Banner Styles */
+        .banner {
+            width: 100%;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            overflow: hidden;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 2em;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.7);
+        }
+        .banner-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SCP Foundation - Research Department, Office 4, Employee Directory</h1>
+        <div class="warning">
+            WARNING: Unauthorized Access Detected.
+        </div>
+        <ul class="employee-list">
+            <li onclick="openModal('evelyn')">Dr. Evelyn Carter - Chief Researcher</li>
+            <li onclick="openModal('michael')">Dr. Michael Hayes - Senior Researcher</li>
+            <li onclick="openModal('sarah')">Dr. Sarah Lin - Research Specialist</li>
+            <li onclick="openModal('thomas')">Dr. Thomas Greene - Research Specialist</li>
+            <li onclick="openModal('rachel')">Dr. Rachel Foster - Junior Researcher</li>
+            <li onclick="openModal('david')">Dr. David Bennett - Junior Researcher</li>
+        </ul>
+        <div class="hacked-info">
+            [HACKED DATA] - The integrity of this page may be compromised. Traffic is being monitored.
+        </div>
+    </div>
+
+    <!-- The Modals -->
+    <div id="evelyn" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('evelyn')">&times;</span>
+            <p>Dr. Evelyn Carter is a leading figure in anomaly research, specializing in containment procedures and has overseen numerous high-risk projects.</p>
+            <p style="color: #FF0000;">[Note] - Loyalty to the Enemy is strong. Attempts to compromise her consistently failed. Not viable target.</p>
+        </div>
+    </div>
+
+    <div id="michael" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('michael')">&times;</span>
+            <p>Dr. Michael Hayes is a senior researcher known for his work on anomaly behavioral studies. [INFORMATION REDACTED AS PER ORDERS OF THE OVERSEER]</p>
+            <p style="color: #FF0000;">[Note] - Potential recruit. Expressed dissatisfaction, may be open to defection. Monitor.</p>
+        </div>
+    </div>
+
+    <div id="sarah" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sarah')">&times;</span>
+            <p>Dr. Sarah Lin specializes in amnestic studies. Further achievements will be displayed.</p>
+            <p style="color: #FF0000;">[Note] - Dedication to research outweighs potential discontent. Unlikely to be swayed. Continue observation.</p>
+        </div>
+    </div>
+
+    <div id="thomas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('thomas')">&times;</span>
+            <p>Dr. Thomas Greene is an expert in anomaly containment and protocols. His work ensures the integrity and security of containment units.</p>
+            <p style="color: #FF0000;">[Note] - Indoctrinated into Enemy ideology. Recruitment attempts futile. Maintain standard surveillance only.</p>
+        </div>
+    </div>
+
+    <div id="rachel" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rachel')">&times;</span>
+            <p>Dr. Rachel Foster focuses on the psychological effects of anomaly exposure.</p>
+            <p style="color: #FF0000;">[Note] Invested in the Enemy's research. Low recruitment potential. Continue monitoring.</p>
+        </div>
+    </div>
+
+    <div id="david" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('david')">&times;</span>
+            <p>Dr. David Bennett works on anomaly detection and classification. His role involves analyzing new entities and updating containment strategies.</p>
+            <p style="color: #FF0000;">[Note] - Pragmatic approach to work. No significant loyalty issues. Recruitment unlikely.</p>
+        </div>
+    </div>
+
+    <!-- Scrolling Banner -->
+    <div class="banner">
+        <div class="banner-content">INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED. INTRUSION DETECTED.</div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
